@@ -1,0 +1,22 @@
+<h1>Current Request</h1>
+<p>IP: <%= @current_request.ip %></p>
+<p>Time: <%= @current_request.time %></p>
+
+<h1>Last 10 Requests</h1>
+<table>
+	<tr>
+		<th>Number</th>
+		<th>IP</th>
+		<th>Time</th>
+	</tr>
+	<% @past_requests.reverse_each.with_index do |request, i| %>
+		<tr>
+			<td><%= i+1 %></td>
+			<td><%= request.ip %></td>
+			<td><%= request.time %></td>
+		</tr> 
+	<% end %>
+</table>
+
+
+
